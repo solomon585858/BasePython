@@ -1,7 +1,7 @@
 """
 создайте класс `Car`, наследник `Vehicle`
 """
-from base import Vehicle
+from homework_02.base import Vehicle
 
 
 class Car(Vehicle):
@@ -12,16 +12,3 @@ class Car(Vehicle):
 
     def set_engine(self, engine):
         self.engine = engine
-
-
-# car = Car(10, 10, 5)
-# car.start()
-# print(car)
-# print(Vehicle)
-# if isinstance(car, Vehicle):
-#     print("True")
-# print(car.start())
-# print(car.move(1))
-# engine = Engine(volume=60, pistons=40)
-# car.set_engine(engine)
-# print(car.engine)

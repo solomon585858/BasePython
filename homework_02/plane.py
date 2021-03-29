@@ -1,8 +1,8 @@
 """
 создайте класс `Plane`, наследник `Vehicle`
 """
-from base import Vehicle
-from exceptions import CargoOverload
+from homework_02.base import Vehicle
+from homework_02.exceptions import CargoOverload
 
 
 class Plane(Vehicle):
@@ -24,9 +24,3 @@ class Plane(Vehicle):
         cargo_before = self.cargo
         self.cargo = 0
         return cargo_before
-
-
-# plane = Plane(10, 20, 400, 40000, 50)
-# print(plane)
-# assert isinstance(plane, Vehicle)
-
