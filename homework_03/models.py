@@ -9,8 +9,6 @@
 """
 import os
 
-from jsonplaceholder_requests import fetch_users, fetch_posts
-
 from sqlalchemy import (
     Column,
     Integer,
@@ -72,27 +70,25 @@ async def create_tables():
     print(f"Done creating tables for users and posts")
 
 
-async def fill_users_table():
+async def fill_users_table(users_data):
     print("Adding users to users table")
     async with Session() as session:
         session: AsyncSession
 
         async with session.begin():
-            users = await fetch_users()
-            for user_ in users:
+            for user_ in users_data:
                 user_added = User(name=user_['name'], username=user_['username'], email=user_['email'])
                 session.add(user_added)
     print("Done adding users to users table")
 
 
-async def fill_posts_table():
+async def fill_posts_table(posts_data):
     print("Adding posts to posts table")
     async with Session() as session:
         session: AsyncSession
 
         async with session.begin():
-            posts = await fetch_posts()
-            for post_ in posts:
+            for post_ in posts_data:
                 post_added = Post(userId=post_['userId'], title=post_['title'], body=post_['body'])
                 session.add(post_added)
     print("Done adding posts to posts table")
