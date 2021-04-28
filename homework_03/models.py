@@ -48,7 +48,7 @@ class User(Base):
 class Post(Base):
     __tablename__ = "posts"
     id = Column(Integer, primary_key=True)
-    userId = Column(Integer, ForeignKey(User.id), nullable=False)
+    user_id = Column(Integer, ForeignKey(User.id), nullable=False)
     title = Column(String, nullable=False, default="", server_default="")
     body = Column(String, nullable=False, default="", server_default="")
 
@@ -89,6 +89,6 @@ async def fill_posts_table(posts_data):
 
         async with session.begin():
             for post_ in posts_data:
-                post_added = Post(userId=post_['userId'], title=post_['title'], body=post_['body'])
+                post_added = Post(user_id=post_['userId'], title=post_['title'], body=post_['body'])
                 session.add(post_added)
     print("Done adding posts to posts table")

@@ -78,7 +78,7 @@ async def test_main(users_data, posts_data):
         email="email",
     ))
     check_data_match(posts, posts_data, args_mapping=dict(
-        userId="userId",
+        user_id="userId",
         title="title",
         body="body",
     ))
