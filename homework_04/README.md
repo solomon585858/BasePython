@@ -1,6 +1,6 @@
 ### Домашнее задание "Асинхронная работа с сетью и бд"
 #### Задача:
-- скопируйте папку `homework_03` для этой домашки (Памятка: https://github.com/OtusTeam/BasePython/tree/homeworks)
+- скопируйте папку `homework_04` для этой домашки (Памятка: https://github.com/OtusTeam/BasePython/tree/homeworks)
 - используйте следующие пакеты: 
     - aiohttp
     - asyncpg
