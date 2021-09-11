@@ -1,9 +1,3 @@
-"""
-Домашнее задание №1
-Функции и структуры данных
-"""
-
-
 def power_numbers(*numbers):
     """
     функция, которая принимает N целых чисел,
@@ -18,6 +12,18 @@ EVEN = "even"
 PRIME = "prime"
 
 
+def is_prime(numbers):
+    prime_list = []
+    for num in numbers:
+        if num > 1:
+            for i in range(2, num):
+                if (num % i) == 0:
+                    break
+            else:
+                prime_list.append(num)
+    return prime_list
+
+
 def filter_numbers(numbers, filter_type):
     """
     функция, которая на вход принимает список из целых чисел,
@@ -25,16 +31,8 @@ def filter_numbers(numbers, filter_type):
     (выбор производится передачей дополнительного аргумента)
     """
     if filter_type == ODD:
-        return [x for x in numbers if x % 2 == 1]
+        return list(filter(lambda x: x % 2 == 1, numbers))
     elif filter_type == EVEN:
-        return [x for x in numbers if x % 2 == 0]
+        return list(filter(lambda x: x % 2 == 0, numbers))
     elif filter_type == PRIME:
-        prime_list = []
-        for num in numbers:
-            if num > 1:
-                for i in range(2, num):
-                    if (num % i) == 0:
-                        break
-                else:
-                    prime_list.append(num)
-        return prime_list
+        return is_prime(numbers)
