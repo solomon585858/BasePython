@@ -14,7 +14,6 @@ class Vehicle(ABC):
         if not self.started:
             if self.fuel > 0:
                 self.started = True
-                return self.started
             elif self.fuel == 0:
                 raise LowFuelError
         return self.started
