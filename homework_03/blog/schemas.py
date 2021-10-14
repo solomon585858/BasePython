@@ -4,11 +4,6 @@ from uuid import uuid4
 from pydantic import BaseModel, Field
 
 
-class CalcInput(BaseModel):
-    a: int
-    b: int
-
-
 class UserIn(BaseModel):
     username: str
 
