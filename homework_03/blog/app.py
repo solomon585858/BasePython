@@ -13,7 +13,7 @@ def read_root():
 
 
 @app.get("/ping/")
-def read_root():
+def read_ping():
     return {"message": "pong"}
 
 
